@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ФРИБЕТ·ФЕСТ — лучшие фрибеты букмекеров</title>
+  <meta name="description" content="Сравните девять предложений легальных букмекеров: суммы, депозит, условия и рейтинг — на одной странице. 18+.">
+  <meta name="theme-color" content="#081426">
+  <link rel="icon" type="image/png" href="assets/freebet-fest-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.2/src/regular/style.css">
+  <link rel="stylesheet" href="styles.css?v=8">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Фрибет Фест — на главную">
+        <img src="assets/freebet-fest-mark.png" alt="" width="40" height="40">
+        <span>ФРИБЕТ<span>·</span>ФЕСТ</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a class="is-active" href="#offers">Все предложения</a>
+        <a href="#how">Как получить</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#about">О проекте</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" type="button" data-search-focus aria-label="Открыть поиск">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+        </button>
+        <a class="header-cta" href="#offers">Сравнить фрибеты</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="page-background" aria-hidden="true">
+      <img class="page-background-catalog-a" src="assets/page-background-catalog-v1.png" alt="">
+      <img class="page-background-catalog-b" src="assets/page-background-catalog-v1.png" alt="">
+      <img class="page-background-lower-a" src="assets/page-background-lower-v1.png" alt="">
+      <img class="page-background-lower-b" src="assets/page-background-lower-v1.png" alt="">
+    </div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-background" aria-hidden="true">
+        <img src="assets/hero-background-v4.png" alt="">
+      </div>
+      <div class="hero-copy shell reveal">
+        <div class="eyebrow"><span></span> Фестиваль предложений · 9 легальных БК</div>
+        <h1 id="hero-title"><span>Фрибеты</span><span>вышли на <em>старт</em></span></h1>
+        <p>Сравниваем приветственные предложения букмекеров в одном месте. Сумма, депозит и важные условия — без мелкого шрифта.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#offers">Смотреть предложения <i class="ph ph-arrow-down" aria-hidden="true"></i></a>
+          <a class="button button-secondary" href="#how">Как это работает</a>
+        </div>
+        <ul class="trust-list" aria-label="Преимущества сервиса">
+          <li><i class="ph ph-shield-check" aria-hidden="true"></i><span><strong>9 легальных БК</strong><small>Только операторы РФ</small></span></li>
+          <li><i class="ph ph-arrows-clockwise" aria-hidden="true"></i><span><strong>Обновлено сегодня</strong><small>Условия сверяются</small></span></li>
+          <li><i class="ph ph-eye" aria-hidden="true"></i><span><strong>Честное сравнение</strong><small>Без скрытых условий</small></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="catalog shell" id="offers" aria-labelledby="offers-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-kicker">Каталог предложений</p>
+          <h2 id="offers-title">Выберите подходящий фрибет</h2>
+        </div>
+        <p>Все суммы и условия собраны в одном формате, чтобы их было легко сравнить.</p>
+      </div>
+
+      <div class="controls reveal" aria-label="Фильтры предложений">
+        <div class="filter-tabs" role="group" aria-label="Тип предложения">
+          <button class="is-active" type="button" data-filter="all"><i class="ph ph-squares-four" aria-hidden="true"></i> Все</button>
+          <button type="button" data-filter="free"><i class="ph ph-gift" aria-hidden="true"></i> Без депозита</button>
+          <button type="button" data-filter="deposit"><i class="ph ph-wallet" aria-hidden="true"></i> С депозитом</button>
+        </div>
+        <label class="search-field">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+          <span class="sr-only">Поиск букмекера</span>
+          <input id="offerSearch" type="search" placeholder="Поиск букмекера">
+        </label>
+        <label class="select-field">
+          <span class="sr-only">Сортировка</span>
+          <select id="offerSort">
+            <option value="amount">Сначала крупные</option>
+            <option value="rating">По рейтингу</option>
+            <option value="name">По названию</option>
+          </select>
+          <i class="ph ph-caret-down" aria-hidden="true"></i>
+        </label>
+      </div>
+
+      <div class="result-line">
+        <span id="resultCount">9 предложений</span>
+        <button type="button" id="resetFilters"><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i> Сбросить</button>
+      </div>
+      <div class="offers-grid" id="offersGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+        <h3>Ничего не нашли</h3>
+        <p>Попробуйте изменить запрос или сбросить фильтры.</p>
+      </div>
+    </section>
+
+    <section class="how shell" id="how" aria-labelledby="how-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-kicker">Простой маршрут</p>
+          <h2 id="how-title">Три шага до фрибета</h2>
+        </div>
+        <p>Процесс одинаков у всех легальных букмекеров и обычно занимает несколько минут.</p>
+      </div>
+      <ol class="steps">
+        <li class="reveal"><span>01</span><i class="ph ph-sliders-horizontal" aria-hidden="true"></i><h3>Сравните</h3><p>Выберите предложение по сумме, депозиту и условиям получения.</p></li>
+        <li class="reveal"><span>02</span><i class="ph ph-identification-card" aria-hidden="true"></i><h3>Подтвердите данные</h3><p>Зарегистрируйтесь и пройдите обязательную идентификацию 18+.</p></li>
+        <li class="reveal"><span>03</span><i class="ph ph-ticket" aria-hidden="true"></i><h3>Получите бонус</h3><p>Выполните условия акции — фрибет появится на игровом счёте.</p></li>
+      </ol>
+    </section>
+
+    <section class="faq-section shell" id="faq" aria-labelledby="faq-title">
+      <div class="faq-intro reveal">
+        <p class="section-kicker">Коротко о главном</p>
+        <h2 id="faq-title">Вопросы о фрибетах</h2>
+        <p>Без рекламных формулировок: только механика бонуса и обязательные ограничения.</p>
+      </div>
+      <div class="faq-list">
+        <details class="reveal">
+          <summary>Что такое фрибет?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+          <p>Это бесплатная ставка от букмекера. При выигрыше обычно начисляется чистая прибыль без учёта номинала самого фрибета.</p>
+        </details>
+        <details class="reveal">
+          <summary>Нужно ли вносить депозит?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+          <p>Зависит от акции. Бездепозитные предложения требуют регистрации и идентификации; в остальных случаях нужен первый депозит.</p>
+        </details>
+        <details class="reveal">
+          <summary>Можно ли вывести фрибет напрямую?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+          <p>Нет. Вывести можно только выигрыш с успешной ставки после выполнения правил конкретного букмекера.</p>
+        </details>
+        <details class="reveal">
+          <summary>Почему условия могут измениться?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+          <p>Акции устанавливают сами букмекеры. Перед регистрацией всегда проверяйте актуальные правила на сайте оператора.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="responsible shell reveal" id="about">
+      <div class="age-mark">18+</div>
+      <div>
+        <h2>Информация, а не обещание выигрыша</h2>
+        <p>ФРИБЕТ·ФЕСТ — информационный сервис и не является букмекером. Мы публикуем рекламу легальных букмекеров, работающих по лицензии ФНС РФ. Размеры и условия фрибетов устанавливают операторы и могут меняться. Азартные игры могут вызывать зависимость.</p>
+      </div>
+      <i class="ph ph-shield-check" aria-hidden="true"></i>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="brand brand-footer" href="#top">
+        <img src="assets/freebet-fest-mark.png" alt="" width="36" height="36">
+        <span>ФРИБЕТ<span>·</span>ФЕСТ</span>
+      </a>
+      <p>© <span data-year></span> · Сравнение предложений легальных букмекеров</p>
+      <p>18+ · Играйте ответственно</p>
+    </div>
+  </footer>
+
+  <nav class="mobile-nav" aria-label="Мобильная навигация">
+    <a class="is-active" href="#offers"><i class="ph ph-squares-four" aria-hidden="true"></i><span>Предложения</span></a>
+    <a href="#how"><i class="ph ph-route" aria-hidden="true"></i><span>Как получить</span></a>
+    <a href="#faq"><i class="ph ph-question" aria-hidden="true"></i><span>Вопросы</span></a>
+  </nav>
+
+  <dialog class="offer-dialog" id="offerDialog">
+    <button class="dialog-close" type="button" data-dialog-close aria-label="Закрыть">
+      <i class="ph ph-x" aria-hidden="true"></i>
+    </button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js?v=4"></script>
+</body>
+</html>

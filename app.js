@@ -35,7 +35,7 @@ const OFFERS = [
     points: ["Барабан после регистрации", "Фрибет до 8 000 ₽", "Требуется идентификация"]
   },
   {
-    id: "betcity", name: "БЕТСИТИ", logo: "assets/logos/betcity.png", amount: 2000, rating: 4.2, deposit: false,
+    id: "betcity", url: "https://r.dalead.pro/go-xe10d7d80df29e300?subid=ff", name: "БЕТСИТИ", logo: "assets/logos/betcity.png", amount: 2000, rating: 4.2, deposit: false,
     type: "Фрибеты за регистрацию",
     points: ["Фрибет до 2 000 ₽", "Регистрация и проверка", "Депозит не требуется"]
   },
@@ -84,7 +84,9 @@ function renderOffers() {
         ${offer.points.map(point => `<li><i class="ph ph-check" aria-hidden="true"></i><span>${point}</span></li>`).join("")}
       </ul>
       <div class="offer-actions">
-        <button class="button button-primary" type="button" data-get="${offer.id}">Получить</button>
+        ${offer.url
+          ? `<a class="button button-primary" href="${offer.url}" rel="sponsored">Получить</a>`
+          : `<button class="button button-primary" type="button" data-get="${offer.id}">Получить</button>`}
         <button class="button button-secondary" type="button" data-offer="${offer.id}">Условия</button>
       </div>
       <div class="offer-meta">
@@ -119,7 +121,7 @@ function openOffer(id) {
         <span class="tag tag-blue">${offer.deposit ? "С депозитом" : "Без депозита"}</span>
       </div>
       <ul>${offer.points.map(point => `<li><i class="ph ph-check" aria-hidden="true"></i><span>${point}</span></li>`).join("")}</ul>
-      <p class="dialog-note">Партнёрская ссылка пока не подключена. Перед участием проверьте полные и актуальные правила акции на официальном сайте букмекера.</p>
+      <p class="dialog-note">${offer.url ? "" : "Партнёрская ссылка пока не подключена. "}Перед участием проверьте полные и актуальные правила акции на официальном сайте букмекера.</p>
       <button class="button button-primary button-wide" type="button" data-notify>Понятно</button>
     </div>
   `;
